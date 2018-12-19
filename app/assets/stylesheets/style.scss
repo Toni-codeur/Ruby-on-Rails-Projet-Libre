@@ -1,7 +1,13 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-/* Variables */
+/* Variables & Mixins */
+
+@mixin box-sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 /* Header */
 
@@ -39,4 +45,54 @@ p {
 
 footer p {
   text-align: center;
+  padding-top: 40px;
+}
+
+/* Misc */
+
+.debug_dump {
+  margin: 0 auto;
+  width: 60%;
+  margin-top: 45px;
+  @include box-sizing;
+}
+
+/* Sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    h1 {
+      font-size: 140%;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* Formulaire */
+
+input {
+  border: 1px solid rgb(182, 182, 182);
+  width: 100%;
+  margin-bottom: 15px;
+  @include box-sizing;
+}
+
+.register-title {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.list-form {
+  color: crimson;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.alert {
+  margin-top: 60px;
 }

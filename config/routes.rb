@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get '/team', to: "statique#team"
   get '/services', to: "statique#services"
   get '/signup', to: "utilisateurs#new"
+  resources :utilisateurs
+
 end
