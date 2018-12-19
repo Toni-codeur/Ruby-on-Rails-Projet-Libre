@@ -1,3 +1,21 @@
 <% provide(:title, "S'enregistrer") %>
-<h1>S'enregistrer</h1>
-<p>Vous pouvez vous enregistrez sur cette page.</p>
+<h1 class="register-title">S'enregistrer</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@utilisateur) do |f| %>
+      <%= f.label :nom %>
+      <%= f.text_field :nom %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Créer mon compte", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

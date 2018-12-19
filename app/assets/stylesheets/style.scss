@@ -45,6 +45,7 @@ p {
 
 footer p {
   text-align: center;
+  padding-top: 40px;
 }
 
 /* Misc */
@@ -70,4 +71,18 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+}
+
+/* Formulaire */
+
+input {
+  border: 1px solid rgb(182, 182, 182);
+  width: 100%;
+  margin-bottom: 15px;
+  @include box-sizing;
+}
+
+.register-title {
+  text-align: center;
+  padding-bottom: 20px;
 }
