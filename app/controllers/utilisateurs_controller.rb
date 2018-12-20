@@ -3,7 +3,7 @@ class UtilisateursController < ApplicationController
   before_action :correct_utilisateur, only: [:edit, :update]
 
   def index
-    @utilisateurs = Utilisateur.all
+    @utilisateurs = Utilisateur.paginate(page: params[:page])
   end
 
   def  show
