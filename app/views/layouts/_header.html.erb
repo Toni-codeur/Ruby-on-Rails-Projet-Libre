@@ -14,6 +14,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profil", current_utilisateur %></li>
+              <li><%= link_to "Paramètres", edit_utilisateur_path(current_utilisateur) %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to "Déconnexion", logout_path, method: :delete %>
