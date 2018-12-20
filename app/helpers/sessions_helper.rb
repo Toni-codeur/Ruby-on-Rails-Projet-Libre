@@ -31,7 +31,7 @@ module SessionsHelper
     @current_utilisateur = nil
   end
 
-  def current_utilisateur(utilisateur)
+  def current_utilisateur?(utilisateur)
     utilisateur = current_utilisateur
   end
 
