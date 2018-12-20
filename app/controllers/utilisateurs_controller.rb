@@ -19,9 +19,9 @@ class UtilisateursController < ApplicationController
     @utilisateur = Utilisateur.new(utilisateur_params)
     if @utilisateur.save
       #Sauvgarde confirmé <- true
-      log_in @utilisateur
-      flash[:success] = "Bienvenue sur le clone de Twitter !"
-      redirect_to @utilisateur
+      UtilisateurMailer.account_activation(@utilisateur).deliver_now
+      flash[:info] = "Merci de consulter votre e-mail pour le lien d'activation de votre compte."
+      redirect_to root_url
     else
       render "new"
     end
