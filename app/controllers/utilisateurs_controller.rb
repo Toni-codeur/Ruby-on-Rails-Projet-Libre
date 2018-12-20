@@ -28,7 +28,5 @@ class UtilisateursController < ApplicationController
         :password, 
         :password_confirmation
       )
-
-
     end
   end
