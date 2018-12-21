@@ -1,6 +1,6 @@
 class UtilisateursController < ApplicationController
   before_action :logged_in_utilisateur, only: [:index, :edit, :update, :destroy]
-  before_action :correct_utilisateur, only: [:edit, :update]
+  before_action :correct_utilisateur, only: [:edit, :update, :destroy]
   before_action :admin_utilisateur, only: :destroy
 
   def index
