@@ -35,9 +35,9 @@ p {
   }
 }
 
-/* Header > Navigation */
+/* Header > Navigations */
 
-.nav.navbar-nav.navbar-right {
+.nav .navbar-nav .navbar-right {
   padding-top: 13px;
 }
 
@@ -73,8 +73,8 @@ aside {
   margin-right: 10px;
 }
 
-.gravatar_edit {
-  padding-top: 20px;
+.gravatar-edit {
+  margin-top: 20px;
 }
 
 /* Formulaire */
@@ -101,8 +101,8 @@ input {
   margin-top: -10px;
   margin-bottom: 10px;
   span {
-    margin-left: 20px;
     font-weight: normal;
+    margin-left: 20px;
   }
 }
 
@@ -111,14 +111,17 @@ input {
   margin-left: 0;
 }
 
-/* Index */
+.alert {
+  margin-top: 60px;
+}
 
+/* INDEX */
 .utilisateurs {
   list-style: none;
   margin: 0;
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid rgb(212, 212, 212);
+    border-bottom: 1px solid rgb(216, 216, 216);
   }
 }
