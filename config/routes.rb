@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'password_resets/new'
-
-  get 'password_resets/edit'
-
-  get "sessions/new"
-
   root "statique#accueil"
   get "/contact", to: "statique#contact"
   get "/team", to: "statique#team"

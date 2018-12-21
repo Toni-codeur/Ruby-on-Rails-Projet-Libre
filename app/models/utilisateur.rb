@@ -1,5 +1,5 @@
 class Utilisateur < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
   validates :nom, presence: true, length: {maximum: 50}
@@ -42,6 +42,16 @@ class Utilisateur < ApplicationRecord
 
   def send_activation_email
     UtilisateurMailer.account_activation(self).deliver_now
+  end
+
+  def create_reset_digest
+    self.reset_token = Utilisateur.new_token
+    update_attribute(:reset_digest, Utilisateur.digest(reset_token))
+    update_attribute(:reset_sent_at, Time.zone.now)
+  end
+
+  def send_password_reset_email
+    UtilisateurMailer.password_reset(self).deliver_now
   end
 
   private
