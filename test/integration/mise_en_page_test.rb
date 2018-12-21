@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class MiseEnPageTest < ActionDispatch::IntegrationTest
   test "mise_en_page links" do

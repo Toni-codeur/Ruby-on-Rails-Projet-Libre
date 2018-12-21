@@ -22,5 +22,5 @@
 
 .byebug_history
 
-#Ignorer les fichiers Spring (test de la gem guard).pid
+# Ignorer les fichiers Spring
 /spring/*.pid

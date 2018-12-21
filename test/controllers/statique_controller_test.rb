@@ -1,8 +1,8 @@
-require 'test_helper'
+require "test_helper"
 
 class StatiqueControllerTest < ActionDispatch::IntegrationTest
   def setup
-    @baseTitle = "Toni"
+    @baseTitle = "Tutoriel RoR Udemy"
   end
 
   test "should get root" do
@@ -28,7 +28,4 @@ class StatiqueControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Services | #{@baseTitle}"
   end
-
-
-
 end

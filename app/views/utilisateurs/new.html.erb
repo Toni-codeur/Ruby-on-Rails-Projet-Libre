@@ -1,21 +1,23 @@
 <% provide(:title, "S'enregistrer") %>
+
 <h1 class="register-title">S'enregistrer</h1>
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@utilisateur) do |f| %>
       <%= render 'shared/error_messages' %>
 
       <%= f.label :nom %>
-      <%= f.text_field :nom, class: "form-control" %>
+      <%= f.text_field :nom, class: 'form-control' %>
 
       <%= f.label :email %>
-      <%= f.email_field :email, class: "form-control" %>
+      <%= f.email_field :email, class: 'form-control' %>
 
       <%= f.label :password %>
-      <%= f.password_field :password, class: "form-control" %>
+      <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: "form-control" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Créer mon compte", class: "btn btn-primary" %>
     <% end %>

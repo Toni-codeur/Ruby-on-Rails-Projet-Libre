@@ -1,6 +1,6 @@
 module StatiqueHelper
   def full_title(page_title = "")
-    base_title = "Toni"
+    base_title = "Tutoriel RoR Udemy"
     if page_title.empty?
       base_title
     else

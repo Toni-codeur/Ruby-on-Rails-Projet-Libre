@@ -1,13 +1,9 @@
-require 'test_helper'
+require "test_helper"
 
 class UtilisateurTest < ActiveSupport::TestCase
   def setup
-    @utilisateur = Utilisateur.new(
-      nom: "Exemple Utilisateur", 
-      email: "utilisateur@exemple.com",
-      password: "exemple",
-      password_confirmation: "exemple"
-    )
+    @utilisateur = Utilisateur.new(nom: "Exemple Utilisateur", email: "utilisateur@exemple.com",
+                                   password: "exemple", password_confirmation: "exemple")
   end
 
   test "should be valid" do
@@ -15,12 +11,12 @@ class UtilisateurTest < ActiveSupport::TestCase
   end
 
   test "nom should be present" do
-    @utilisateur.nom = "    "
+    @utilisateur.nom = "   "
     assert_not @utilisateur.valid?
   end
 
   test "email should be present" do
-    @utilisateur.email = "    "
+    @utilisateur.email = "   "
     assert_not @utilisateur.valid?
   end
 
@@ -42,7 +38,7 @@ class UtilisateurTest < ActiveSupport::TestCase
       assert @utilisateur.valid?, "#{adresse_valide.inspect} doit être valide."
     end
   end
-  
+
   test "email validation should reject invalid addresses" do
     adresses_invalides = %w[user@example,com user_at_foo.org user.name@example.
                             foo@bar_baz.com foo@bar+baz.com]
@@ -51,8 +47,8 @@ class UtilisateurTest < ActiveSupport::TestCase
       assert_not @utilisateur.valid?, "#{adresse_invalide.inspect} doit être invalide."
     end
   end
-  
-  test "email addresses should be unique" do
+
+  test "email adresses should be unique" do
     utilisateur_duplique = @utilisateur.dup
     utilisateur_duplique.email = @utilisateur.email.upcase
     @utilisateur.save
@@ -60,13 +56,12 @@ class UtilisateurTest < ActiveSupport::TestCase
   end
 
   test "password should be present" do
-    @utilisateur.password = @utilisateur.password_confirmation + " " * 6
+    @utilisateur.password = @utilisateur.password_confirmation = " " * 6
     assert_not @utilisateur.valid?
   end
 
   test "password should have a minimum length" do
-    @utilisateur.password = @utilisateur.password_confirmation + "a" * 5
+    @utilisateur.password = @utilisateur.password_confirmation = "a" * 5
     assert_not @utilisateur.valid?
   end
-
 end

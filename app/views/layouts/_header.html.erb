@@ -1,31 +1,31 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to image_tag("logo-kairios.jpg", alt: "Logo Kairios"), root_path,class: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Accueil', root_path %></li>
-        <li><%= link_to 'Services', services_path %></li>
-        <li><%= link_to 'Team', team_path %></li>
-        <li><%= link_to 'Contact', contact_path %></li>
-        <% if logged_in? %>
-          <li><%= link_to 'Utilisateurs', utilisateurs_path %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Compte <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profil", current_utilisateur %></li>
-              <li><%= link_to "Paramètres", edit_utilisateur_path(current_utilisateur) %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Déconnexion", logout_path, method: :delete %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Se connecter", login_path %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
+    <div class="container">
+        <%= link_to image_tag("petitLogo.png", alt: "Logo gCKn"), root_path, class: "logo" %>
+        <nav>
+        <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Accueil", root_path %></li>
+            <li><%= link_to "Services", services_path %></li>
+            <li><%= link_to "Team", team_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
+            <% if logged_in? %>
+                <li><%= link_to "Utilisateurs", utilisateurs_path %></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Compte <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><%= link_to "Profil", current_utilisateur %></li>
+                        <li><%= link_to "Paramètres", edit_utilisateur_path(current_utilisateur) %></li>
+                        <li class="divider"></li>
+                        <li>
+                            <%= link_to "Déconnexion", logout_path, method: :delete %>
+                        </li>
+                    </ul>
+                </li>
+            <% else %>
+                <li><%= link_to "Se connecter", login_path %></li>
+            <% end %>
+        </ul>
+        </nav>
+    </div>
 </header>

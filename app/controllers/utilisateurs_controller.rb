@@ -7,7 +7,7 @@ class UtilisateursController < ApplicationController
     @utilisateurs = Utilisateur.paginate(page: params[:page])
   end
 
-  def  show
+  def show
     @utilisateur = Utilisateur.find(params[:id])
   end
 
@@ -18,7 +18,6 @@ class UtilisateursController < ApplicationController
   def create
     @utilisateur = Utilisateur.new(utilisateur_params)
     if @utilisateur.save
-      #Sauvgarde confirmé <- true
       @utilisateur.send_activation_email
       flash[:info] = "Merci de consulter votre e-mail pour le lien d'activation de votre compte."
       redirect_to root_url
@@ -34,7 +33,7 @@ class UtilisateursController < ApplicationController
   def update
     @utilisateur = Utilisateur.find(params[:id])
     if @utilisateur.update_attributes(utilisateur_params)
-      flash[:success] = "Profil mis à jour"
+      flash[:success] = "Profile mis à jour"
       redirect_to @utilisateur
     else
       render "edit"
@@ -42,7 +41,7 @@ class UtilisateursController < ApplicationController
   end
 
   def destroy
-    Utilisateur.find(params:[:id]).destroy
+    Utilisateur.find(params[:id]).destroy
     flash[:success] = "Utilisateur supprimé"
     redirect_to utilisateurs_url
   end
@@ -50,12 +49,8 @@ class UtilisateursController < ApplicationController
   private
 
   def utilisateur_params
-    params.require(:utilisateur).permit(
-      :nom, 
-      :email, 
-      :password, 
-      :password_confirmation
-    )
+    params.require(:utilisateur).permit(:nom, :email, :password,
+                                        :password_confirmation)
   end
 
   def logged_in_utilisateur
